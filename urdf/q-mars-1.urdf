@@ -1,0 +1,358 @@
+<?xml version="1.0"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="q-mars-1">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.00919419632775834 7.54222423634888E-06 0.0232268615589661"
+        rpy="0 0 0" />
+      <mass
+        value="16.52506031357" />
+      <inertia
+        ixx="0.140207641677359"
+        ixy="-2.32852696814203E-08"
+        ixz="7.49646596952963E-05"
+        iyy="0.147499810523679"
+        iyz="-1.09276605020779E-07"
+        izz="0.218128710678082" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_sim/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 0.35" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_sim/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="base_link">
+    <mu1>5</mu1>
+    <mu2>5</mu2>
+  </gazebo>
+  <link
+    name="left_front_wheel_link">
+    <inertial>
+      <origin
+        xyz="2.5955E-12 -1.3474E-11 0.078232"
+        rpy="0 0 0" />
+      <mass
+        value="3.2686" />
+      <inertia
+        ixx="0.0098786"
+        ixy="1.1565E-13"
+        ixz="-6.7006E-12"
+        iyy="0.0098786"
+        iyz="-5.8148E-12"
+        izz="0.012101" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_sim/meshes/left_front_wheel_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_sim/meshes/left_front_wheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="left_front_wheel_link">
+    <mu1>3</mu1>
+    <mu2>3</mu2>
+    
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  <joint
+    name="left_front_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0.3937 0.22753 -0.20152"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_front_wheel_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="100"
+      velocity="100" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <gazebo reference="right_front_wheel_link">
+    <mu1>3</mu1>
+    <mu2>3</mu2>
+ 
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  <link
+    name="right_front_wheel_link">
+    <inertial>
+      <origin
+        xyz="-2.6029E-13 1.2836E-10 -0.078232"
+        rpy="0 0 0" />
+      <mass
+        value="3.2686" />
+      <inertia
+        ixx="0.0098786"
+        ixy="2.1708E-12"
+        ixz="2.2016E-13"
+        iyy="0.0098786"
+        iyz="7.4189E-13"
+        izz="0.012101" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_sim/meshes/right_front_wheel_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_sim/meshes/right_front_wheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_front_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0.39414 -0.22753 -0.20152"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_front_wheel_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="100"
+      velocity="100" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <gazebo reference="left_back_wheel_link">
+    <mu1>3</mu1>
+    <mu2>3</mu2>
+   
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  <link
+    name="left_back_wheel_link">
+    <inertial>
+      <origin
+        xyz="-7.4061E-11 4.2315E-11 0.078232"
+        rpy="0 0 0" />
+      <mass
+        value="3.2686" />
+      <inertia
+        ixx="0.0098786"
+        ixy="-5.0941E-13"
+        ixz="-4.2444E-13"
+        iyy="0.0098786"
+        iyz="8.8291E-13"
+        izz="0.012101" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_sim/meshes/left_back_wheel_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_sim/meshes/left_back_wheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_back_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="-0.34414 0.22753 -0.20152"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_back_wheel_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="100"
+      velocity="100" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <gazebo reference="right_back_wheel_link">
+    <mu1>3</mu1>
+    <mu2>3</mu2>
+    
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  <link
+    name="right_back_wheel_link">
+    <inertial>
+      <origin
+        xyz="1.3798E-10 -1.3175E-11 -0.078232"
+        rpy="0 0 0" />
+      <mass
+        value="3.2686" />
+      <inertia
+        ixx="0.0098786"
+        ixy="1.5981E-13"
+        ixz="8.6371E-13"
+        iyy="0.0098786"
+        iyz="-1.2155E-13"
+        izz="0.012101" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_sim/meshes/right_back_wheel_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_sim/meshes/right_back_wheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_back_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="-0.3437 -0.22753 -0.20152"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_back_wheel_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="100"
+      velocity="100" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+
+  <gazebo>
+    <plugin name="two_wheeled_robot_diff_drive" filename="libgazebo_ros_diff_drive.so">
+ 
+      <update_rate>100</update_rate>
+      <num_wheel_pairs>2</num_wheel_pairs>
+      
+      <!-- wheels -->
+      <left_joint>left_back_wheel_joint</left_joint>
+      <left_joint>left_front_wheel_joint</left_joint>
+      <right_joint>right_back_wheel_joint</right_joint>
+      <right_joint>right_front_wheel_joint</right_joint>
+ 
+      <!-- kinematics -->
+      <wheel_separation>0.6</wheel_separation>
+      <wheel_separation>0.6</wheel_separation>
+      <wheel_diameter>0.29</wheel_diameter>
+      <wheel_diameter>0.29</wheel_diameter>
+ 
+      <!-- limits -->
+      <max_wheel_torque>80</max_wheel_torque>
+      <max_wheel_acceleration>40.0</max_wheel_acceleration>
+ 
+      <!-- Receive velocity commands on this ROS topic -->
+      <command_topic>cmd_vel</command_topic>
+ 
+      <!-- output -->
+      <!-- When false, publish no wheel odometry data to a ROS topic -->
+      <publish_odom>true</publish_odom>
+ 
+      <!-- When true, publish coordinate transform from odom to base_footprint -->
+      <!-- I usually use the robot_localization package to publish this transform -->  
+      <publish_odom_tf>true</publish_odom_tf>
+     
+      <!-- When true, publish coordinate transform from base_link to the wheels -->
+      <!-- The robot_state_publisher package is often used to publish this transform -->  
+      <publish_wheel_tf>true</publish_wheel_tf>
+ 
+      <odometry_topic>odom</odometry_topic>
+      <odometry_frame>odom_link</odometry_frame>
+      <robot_base_frame>base_link</robot_base_frame>
+ 
+      <odometry_source>1</odometry_source>
+      <ros>
+        <remapping>odom:=wheel/odometry</remapping>
+      </ros>
+    </plugin>
+  </gazebo>
+</robot>
